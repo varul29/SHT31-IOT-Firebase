@@ -126,19 +126,21 @@
      
 ## How to use firebase after configuration in RPI3
 
-  Perform all the setup for firebase as mentioned above
-
-    //This code should be used with every script that you will be using to connect to the Firebase database.
-    //Importing I2C, Time, Firebase library in python code.
-    import smbus
-    import time
+  Perform all the setup for firebase as mentioned above.
+  
+   This code should be used with every script that you will be using to connect to the Firebase database.
+   
+    
     from firebase import firebase
     
-    // IN LAST USE: 
-    //store the Host ID(provided in firebase database) in variable where you want to send the real time sensor data.  
+   ### In last post the data as per mentioned in code and elborated below:
+   
+   Store the Host ID(provided in firebase database) in variable where you want to send the real time sensor data.  
+    
     firebase= firebase.FirebaseApplication('host id mentioned in databse of firebase')
 
-    //store the readings in variable and convert it into string and using firbase.post then data will be posted to databse of firebase 
+   Store the readings in variable and convert it into string and using firbase.post then data will be posted to databse of firebase 
+    
     result = firebase.post('host id mentioned', {'cTemp':str(cTemp),'ftemp':str(fTemp), 'humidity':str(humidity)})
     print(result)
    
@@ -146,8 +148,9 @@
       
       $> python SHT31.py
  
- After performing all the certain parameters mentioned above as well as for different sensor code, 
- The output of database will be appear as mentioned below in snap.
+ After executing the file,
+ 
+ The output readings of SHT31 sensor in Firebase database will be appear as mentioned below in snap.
  
   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Sample%20Data.PNG)
  
