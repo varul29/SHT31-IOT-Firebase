@@ -4,7 +4,41 @@
 
 ## Setup for the Devices used in project 
 
-  - Raspberry Pi 3 Model B
+  - ## Raspberry Pi 3 Model B
+      ### Installation and Image Configuration
+
+       - Install OS Raspbian [imagefile](https://www.raspberrypi.org/downloads/)
+       - Make the bootable SD card containing using software "Win32 Disk Imager" or "Power ISO"
+       - Insert Bootable SD card in Raspberry Pi SD slot
+    Give power to Raspberry pi through micro USB port and connect keybopard, mouse, HDMI port of Diplay Screen with
+
+    ***Enable the VNC settings so that it will be easily connected to VNC viewer in Laptop or Desktop*** 
+
+      ### For Connecting the Raspberry pi via Laptop using LAN Port
+  
+       - Power Up the RPI through micro USB port
+       - Connect the LAN port with Laptop
+       - open cmd prompt
+       - Write "ipconfig"
+       - In Ethernet Adapter option it will show Raspberry PI the default local IP (copy and save it in notepad)
+       - Install VNCviewer
+       - After installation, Open VNC viewer -> File -> New Connection
+       - Type the default Ip copied before, Give Friendly name to raspberry pi(If user want)
+       - Write the default Username = "pi" and Password = "raspberry" (if no user id password changed by the user)
+  
+      ### You will able to see the Raspbian OS system
+  
+      - Open CLI of Raspbian
+      - Write the commands
+        - sudo apt-upgrade
+        - sudo apt-update
+     
+        ### For Python
+        Download and install smbus library on Raspberry pi. Steps to install smbus are provided at:
+
+        https://pypi.python.org/pypi/smbus-cffi/0.5.1
+       
+  
   
   - [SHT31](https://store.ncd.io/product/sht31-humidity-and-temperature-sensor-%C2%B12rh-%C2%B10-3c-i2c-mini-module/) I2C mini module sensor
    
@@ -26,13 +60,73 @@
     
    - Check the LED status which shows the power Connection in I2C adapter(connected with GPIO pins of RPI3) as well as in SHT31
    - After power connection open CLI of Raspberry Pi 
-   - Configure all the general commands which are mentioned in ["Raspberry-PI-"](https://github.com/varul29/Raspberry-PI-/blob/master/README.md) folder
+   - Configure all the general commands which are mentioned above for RPI setup
    - detect I2C register of sensor using comman i2cdetect -y 1
    - configure firebase using "sudo pip install python-firebase"
+   
+# Firebase Console browser Setup
+  
+   Log in to firebase console.
+  
+   - Click on "Add Project"
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Add%20project.PNG)
+  
+   - Write Project name. 
+  
+   - Accept controller-controller terms.
     
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Project%20name.PNG)
+  
+   - Click "create project".
+  
+   - Click "Database" (mentioned in left handside).
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Database.PNG)
+  
+   - Click on "Create Database".
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Create%20databse.PNG)
+  
+   - According to newwer version - you can choose either locked version or unlocked version and press Ok.
+  
+   - Choose Realtime Database(mentioned in the image).
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Real%20time%20database.PNG)
+  
+   - Click on "Rules".
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Rules.PNG)
+  
+   ### If in default security rules code is mentioned like below
+      
+        {
+          "rules": { 
+            "read": "auth != null"
+            "write": "auth != null"
+            }
+         }
+   ### Then change "auth != null" into "true"
+  
+        {
+              "rules": { 
+                "read": "true"
+               "write": "true"
+                }
+         }
+         
+   - click on "Publish".
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/ruels%20change.PNG)
+  
+   - While creating code, we have to use the Host Id "https://tahsensor.firebase.com/" (which will be different for every users)
+  
+   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/hostid.PNG)
+  
+     
 ## How to use firebase after configuration in RPI3
 
-you may also learn simple documentation - mentioned in reading section of ["Firebase_Python"](https://github.com/varul29/Raspberry-PI-/blob/master/Firebase_Python/README.md) folder
+  Perform all the setup for firebase as mentioned above
 
     //This code should be used with every script that you will be using to connect to the Firebase database.
     //Importing I2C, Time, Firebase library in python code.
@@ -51,6 +145,13 @@ you may also learn simple documentation - mentioned in reading section of ["Fire
  Download (or git pull) the code in pi. Run the program.
       
       $> python SHT31.py
+ 
+ After performing all the certain parameters mentioned above as well as for different sensor code, 
+ The output of database will be appear as mentioned below in snap.
+ 
+  ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Sample%20Data.PNG)
+ 
+
  
  
  ### Note: This code is to post the Temeprature and humidiy sensor data for only one go.  
