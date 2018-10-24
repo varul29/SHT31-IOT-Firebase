@@ -62,7 +62,7 @@
  
     ### Post the data in Firebase 
  
-    We are syncing the real time database for JSON data. Data will be stored in form JSON object and synchronized in realtime to every connected client. For creating project for storing sensor data in console database, check the [documentation](https://github.com/varul29/Raspberry-PI-/blob/master/Firebase_Python/README.md)
+    We are syncing the real time database for JSON data. Data will be stored in form JSON object and synchronized in realtime to every connected client. For creating project for storing sensor data in console database, check the [documentation](https://github.com/varul29/Firebase_Setup/blob/master/README.md)
    
    - Connecting to the Host ID(provided in firebase database)  
     
