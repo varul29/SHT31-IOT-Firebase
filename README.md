@@ -70,7 +70,7 @@
       
    ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/hostid.PNG)
 
-   - Posting real time readings in form of JSON data to the host ID used for storing the values of sensor 
+   - Posting real time readings in form of JSON data and linking the host ID for storing the values of sensor 
    - The JSON data of sensor will be posted to database using "firebase.post" also called JSON post method
        
           result = firebase.post('host id mentioned', {'cTemp':str(cTemp),'ftemp':str(fTemp), 'humidity':str(humidity)})
