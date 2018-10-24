@@ -12,7 +12,7 @@
 
 ## Devices Used in project 
 
-  - Raspberry Pi 3 Model B
+  - Raspberry Pi 3 Model B ([Setup and Insatallation procedure for Newbie](https://github.com/varul29/Raspberry-PI-/blob/master/README.md))
   - [SHT31](https://store.ncd.io/product/sht31-humidity-and-temperature-sensor-%C2%B12rh-%C2%B10-3c-i2c-mini-module/) I2C mini module sensor
   ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/Firebase_Python/SHT31%20I2CS.png)
    
@@ -62,7 +62,7 @@
  
     ### Post the data in Firebase 
  
-    We are syncing the real time database for JSON data. Data will be stored in form JSON object and synchronized in realtime to every connected client.
+    We are syncing the real time database for JSON data. Data will be stored in form JSON object and synchronized in realtime to every connected client. For creating project for storing sensor data in console database, check the [documentation](https://github.com/varul29/Raspberry-PI-/blob/master/Firebase_Python/README.md)
    
    - Connecting to the Host ID(provided in firebase database)  
     
