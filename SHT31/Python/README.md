@@ -33,8 +33,8 @@
         - sudo apt-upgrade
         - sudo apt-update
      
-        ### For Python
-        Download and install smbus library on Raspberry pi. Steps to install smbus are provided at:
+      ### For Python
+      Download and install smbus library on Raspberry pi. Steps to install smbus are provided at:
 
         https://pypi.python.org/pypi/smbus-cffi/0.5.1
        
