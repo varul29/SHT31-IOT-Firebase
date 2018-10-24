@@ -124,23 +124,23 @@
    ![alt text](https://github.com/varul29/Raspberry-PI-/blob/master/hostid.PNG)
   
      
-## How to use firebase after configuration in RPI3
+## How to use firebase after installing Firebase package in RPI3
 
-  Perform all the setup for firebase as mentioned above.
+   Perform all the setup for firebase as mentioned above.
   
    This code should be used with every script that you will be using to connect to the Firebase database.
-   
-    
+       
     from firebase import firebase
     
-   ### In last post the data as per mentioned in code and elborated below:
+   ### How to post the data in Firebase database
    
-   Store the Host ID(provided in firebase database) in variable where you want to send the real time sensor data.  
+   - Store the Host ID(provided in firebase database) in variable.  
     
     firebase= firebase.FirebaseApplication('host id mentioned in databse of firebase')
 
-   Store the readings in variable and convert it into string and using firbase.post then data will be posted to databse of firebase 
-    
+   - Store the real time readings in variable and convert the readings into string
+   - The string conversion real time data of sensor will be post to database using "firebase.post" 
+       
     result = firebase.post('host id mentioned', {'cTemp':str(cTemp),'ftemp':str(fTemp), 'humidity':str(humidity)})
     print(result)
    
