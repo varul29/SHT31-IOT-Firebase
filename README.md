@@ -7,7 +7,7 @@
 
   - The Firebase Realtime Database is a cloud-hosted database.
   - Single client sensor data is Collaborate with cross-platform apps like IOS, Android, and JavaScript SDKs as well as many IoT hardware with ease.
-  - With the help of I2C protocol we will be able to extract the precised, calibrated and linear data.
+  - The 2 wired I2C protocol we are be able to extract the precised, calibrated and linear data of sensor. Using I2C connection protocol we can connect around 255 sensors at same time. 
   - Data of sensor stores with specified key-value pairs to change the behavior and appearance of your app without requiring any download an update.
 
 ## Devices Used in project 
@@ -39,7 +39,7 @@
           bus = smbus.SMBus(1)
           bus.write_i2c_block_data(0x44, 0x2C, [0x06])
   
-  - Read data from 8 Bit I2C frame using speidfied address registers  
+  - Read data from 16 Bits I2C frame of specified address registers  
       
           data = bus.read_i2c_block_data(0x44, 0x00, 6)   
           
