@@ -81,7 +81,7 @@
    
 Now Download (or git pull) the code in pi. Run the program.
       
-      $> python SHT31.py
+      $> python SHT31_Firebase.py
  
  After executing the Program,
  
